@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  title: Iphone
+  description: 6s
+  price: 999
+  user_id: 1
+
+two:
+  id: 2
+  title: Ipad
+  description: air
+  price: 999
+  user_id: 1
