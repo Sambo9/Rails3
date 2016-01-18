@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<div class="ui card">
+  <div class="image">
+    <img src="http://semantic-ui.com/images/avatar2/large/matthew.png">
+  </div>
+  <div class="content">
+    <a class="header"><%= @user.username %></a>
+    <div class="meta">
+      <span class="date"><%= @user.created_at %></span>
+    </div>
+    <div class="description">
+      <%= @user.email %>
+    </div>
+  </div>
+</div>
+<!-- <p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p> -->
+
+<%= link_to edit_user_path(@user), :class=> "btn btn-sm btn-primary" do %>
+    <i class="edit icon"></i>  <%= "Edit" %>
+<% end %>
+
+<%= link_to users_path, :class=> "btn btn-sm btn-primary" do %>
+    <i class="chevron left icon"></i> <%= "Back" %>
+<% end %>

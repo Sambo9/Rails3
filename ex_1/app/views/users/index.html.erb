@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Users</h1>
+
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Actions</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.username %></td>
+        <td><%= user.email %></td>
+
+        <!-- <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+
+        <td><%= link_to user, :class=> "ui primary circular button" do %> <i class="info circle icon"></i> <%= " Show " %> <% end %>
+        &nbsp; <%= link_to edit_user_path(user), :class=>  "ui primary circular button" do %> <i class="edit icon"></i> <%= "Edit"  %> <% end %>
+        &nbsp; <%= link_to user, method: :delete, data: { confirm: 'Are you sure?' }, :class=>  "ui red circular button" do %> <i class="trash outline icon"></i> <%= "Delete" %> <% end %> </td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= link_to new_user_path, :class=> "ui primary button" do %>
+    <i class="add user icon"></i> <%= "New User" %>
+<% end %>

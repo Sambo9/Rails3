@@ -1,0 +1,10 @@
+<h1>Editing User</h1>
+
+<%= render 'form' %>
+|
+
+<%= link_to @user , :class=> "btn btn-sm btn-primary" do %>
+ <i class="info circle icon"></i> <%= " Show " %> <% end %>
+<%= link_to users_path, :class=> "btn btn-sm btn-primary" do %>
+    <i class="chevron left icon"></i> <%= "Back" %>
+<% end %>
