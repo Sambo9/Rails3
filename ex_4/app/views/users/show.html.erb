@@ -13,6 +13,17 @@
     </div>
   </div>
 </div>
+<p>Tags :
+<ul>
+
+<% @user.labels.each do |i| %>
+
+  <li><%= i.title %></li>
+
+<% end %>
+
+</ul>
+</p>
 <!-- <p>
   <strong>Username:</strong>
   <%= @user.username %>

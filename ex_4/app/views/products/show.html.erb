@@ -13,7 +13,7 @@
   <br>
   <%= @product.description %>
 </p>
-
+<p>Tags :
 <ul>
 
 <% @product.labels.each do |i| %>
@@ -23,6 +23,7 @@
 <% end %>
 
 </ul>
+</p>
 
 <%= link_to edit_product_path(@product), :class=> "btn btn-sm btn-primary" do %>
     <span class="glyphicon glyphicon-edit"></span> <%= "Edit" %>
