@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ex4</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+</head>
+<body>
+
+  <header class="navbar navbar-top navbar-inverse">
+    <div class="container">
+      <ul class="nav navbar-nav navbar-left">
+    <li>  <%= link_to "Coding", root_path, id: "logo" %> </li>
+    </ul>
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Home", root_path %></li>
+
+          <li><%= link_to "Products",  products_path %>
+
+          <% if logged_in? %>
+            <li><%= link_to "Users", users_path %></li>
+            <li><%= link_to "Log out", logout_path, method: :delete %></li>
+
+          <% else %>
+            <li><%= link_to "Log in", login_path %> </li>
+            <li><%= link_to "Register",  login_path %>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<%= yield %>
+
+</body>
+</html>
