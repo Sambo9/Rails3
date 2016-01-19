@@ -14,7 +14,15 @@
   <%= @product.description %>
 </p>
 
+<ul>
 
+<% @product.labels.each do |i| %>
+
+  <li><%= i.title %></li>
+
+<% end %>
+
+</ul>
 
 <%= link_to edit_product_path(@product), :class=> "btn btn-sm btn-primary" do %>
     <span class="glyphicon glyphicon-edit"></span> <%= "Edit" %>
